@@ -1,0 +1,6 @@
+[
+  { "name": "01-cover-wide.jpg", "scene": "wide", "width": 1280, "height": 720, "kind": "cover" },
+  { "name": "02-editor.jpg", "scene": "editor", "width": 1280, "height": 800, "kind": "editor" },
+  { "name": "03-cover-square.jpg", "scene": "square", "width": 800, "height": 800, "kind": "cover" },
+  { "name": "04-cover-portrait.jpg", "scene": "portrait", "width": 768, "height": 960, "kind": "cover" }
+]

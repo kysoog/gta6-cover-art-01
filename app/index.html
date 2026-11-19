@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Afterhours — Sunset Cover Lab</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true"><span></span></div>
+    <div class="brand-copy"><strong>AFTERHOURS</strong><small>SUNSET COVER LAB</small></div>
+    <div class="topbar-rule"></div>
+    <span class="edition">EDITION 01 / ORIGINAL POSTER STUDIO</span>
+    <span class="local-badge"><i></i> LOCAL &amp; PRIVATE</span>
+  </header>
+
+  <main class="workspace">
+    <aside class="sidebar library" aria-label="Photo and crop controls">
+      <section class="control-section">
+        <div class="section-heading"><span>01</span><h2>YOUR SCENES</h2><b id="photoCount">0</b></div>
+        <label class="drop-zone" id="dropZone" for="photoInput">
+          <input id="photoInput" type="file" accept="image/*" multiple>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0L7 9m5-5 5 5M5 14v5h14v-5"/></svg>
+          <strong>DROP PHOTOS HERE</strong>
+          <span>or click to browse · JPG / PNG / WEBP</span>
+        </label>
+        <button class="text-button sample-button" id="sampleButton" type="button">LOAD THE SAMPLE SET <span>↗</span></button>
+        <div class="photo-reel" id="photoReel" aria-label="Loaded photos"></div>
+        <p class="micro-copy">Click a photo to place it in the selected panel.</p>
+      </section>
+
+      <section class="control-section crop-section">
+        <div class="section-heading"><span>02</span><h2>FRAME THE SHOT</h2></div>
+        <div class="panel-tabs" role="group" aria-label="Select poster panel">
+          <button class="panel-tab selected" data-panel="0" type="button"><i>A</i><span>HERO</span></button>
+          <button class="panel-tab" data-panel="1" type="button"><i>B</i><span>DETAIL</span></button>
+          <button class="panel-tab" data-panel="2" type="button"><i>C</i><span>SCENE</span></button>
+        </div>
+        <label class="range-label" for="zoomRange"><span>ZOOM</span><output id="zoomValue">100%</output></label>
+        <input id="zoomRange" class="range" type="range" min="100" max="260" value="100">
+        <div class="crop-actions">
+          <button id="centerCrop" type="button">CENTER CROP</button>
+          <button id="fillAll" type="button">FILL ALL PANELS</button>
+        </div>
+        <p class="gesture-hint"><span>DRAG</span> to pan <i>·</i> <span>SCROLL</span> to zoom</p>
+      </section>
+
+      <section class="control-section grade-section">
+        <div class="section-heading"><span>03</span><h2>COLOUR GRADE</h2></div>
+        <div class="grade-options" role="group" aria-label="Colour grade">
+          <button class="grade-chip selected" data-theme="sunset" type="button"><i class="swatch sunset"></i>SUNSET</button>
+          <button class="grade-chip" data-theme="poolside" type="button"><i class="swatch poolside"></i>POOL</button>
+          <button class="grade-chip" data-theme="midnight" type="button"><i class="swatch midnight"></i>NEON</button>
+        </div>
+        <label class="range-label" for="grainRange"><span>FILM GRAIN</span><output id="grainValue">22%</output></label>
+        <input id="grainRange" class="range" type="range" min="0" max="60" value="22">
+      </section>
+    </aside>
+
+    <section class="stage" aria-label="Live poster preview">
+      <div class="stage-heading">
+        <div><span class="live-dot"></span><strong>LIVE CANVAS</strong><i>/</i><span id="stageFormat">1920 × 1080</span></div>
+        <span id="activePanelLabel">EDITING PANEL A</span>
+      </div>
+      <div class="canvas-workbench" id="canvasWorkbench">
+        <div class="canvas-shadow" id="canvasShadow">
+          <canvas id="posterCanvas" width="1920" height="1080" aria-label="Your live multi-panel cover"></canvas>
+        </div>
+      </div>
+      <div class="stage-footer">
+        <span>DRAG A PANEL TO REFRAME</span>
+        <span class="stage-tip">YOUR PHOTOS NEVER LEAVE THIS TAB</span>
+      </div>
+    </section>
+
+    <aside class="sidebar caption-panel" aria-label="Caption and export controls">
+      <section class="control-section">
+        <div class="section-heading"><span>04</span><h2>MAKE IT A TITLE</h2></div>
+        <label class="field-label" for="titleOne">TITLE / LINE ONE</label>
+        <input class="title-input" id="titleOne" type="text" maxlength="14" value="NEON" autocomplete="off" spellcheck="false">
+        <label class="field-label" for="titleTwo">TITLE / LINE TWO</label>
+        <input class="title-input" id="titleTwo" type="text" maxlength="14" value="REQUIEM" autocomplete="off" spellcheck="false">
+        <label class="field-label" for="tagline">TAGLINE</label>
+        <textarea id="tagline" maxlength="52" rows="2" spellcheck="false">THE CITY NEVER ASKS TWICE.</textarea>
+        <div class="caption-meta"><span id="characterCount">27 / 52</span><button id="clearCaption" type="button">CLEAR</button></div>
+      </section>
+
+      <section class="control-section format-section">
+        <div class="section-heading"><span>05</span><h2>CHOOSE YOUR POST</h2></div>
+        <div class="format-options" role="group" aria-label="Export dimensions">
+          <button class="format-card" data-format="square" type="button"><i class="ratio ratio-square"></i><span>SQUARE<small>1080 × 1080</small></span></button>
+          <button class="format-card" data-format="portrait" type="button"><i class="ratio ratio-portrait"></i><span>PORTRAIT<small>1080 × 1350</small></span></button>
+          <button class="format-card selected" data-format="wide" type="button"><i class="ratio ratio-wide"></i><span>WIDE<small>1920 × 1080</small></span></button>
+        </div>
+      </section>
+
+      <section class="control-section export-section">
+        <div class="export-summary"><span>READY FOR THE FEED</span><small>PNG · FULL RESOLUTION</small></div>
+        <button id="exportButton" class="export-button" type="button"><span>EXPORT PNG</span><i id="exportSize">1920 × 1080</i><b>↓</b></button>
+        <p id="exportStatus" class="export-status" role="status">Made locally. Yours completely.</p>
+      </section>
+      <div class="original-note"><span class="tiny-star">✦</span><p>ORIGINAL ARTWORK<br>No game assets. No uploads.</p></div>
+    </aside>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

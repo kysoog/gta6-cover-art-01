@@ -1,6 +1,0 @@
-[
-  { "name": "01-cover.jpg", "mode": "cover", "scene": "empire", "width": 1280, "height": 720 },
-  { "name": "02-editor.jpg", "mode": "editor", "scene": "empire", "width": 1280, "height": 900 },
-  { "name": "03-portrait.jpg", "mode": "cover", "scene": "vice", "width": 864, "height": 1080 },
-  { "name": "04-square.jpg", "mode": "cover", "scene": "palms", "width": 960, "height": 960 }
-]

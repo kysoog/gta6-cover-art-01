@@ -1,0 +1,46 @@
+[
+  {
+    "name": "01-cover.jpg",
+    "width": 1280,
+    "height": 720,
+    "bytes": 178475,
+    "exportWidth": 1920,
+    "exportHeight": 1080,
+    "exportBytes": 3277600,
+    "jpegQuality": 90,
+    "cdpExceptions": []
+  },
+  {
+    "name": "02-editor.jpg",
+    "width": 1280,
+    "height": 900,
+    "bytes": 187818,
+    "exportWidth": 1920,
+    "exportHeight": 1080,
+    "exportBytes": 3277600,
+    "jpegQuality": 90,
+    "cdpExceptions": []
+  },
+  {
+    "name": "03-portrait.jpg",
+    "width": 864,
+    "height": 1080,
+    "bytes": 171910,
+    "exportWidth": 1080,
+    "exportHeight": 1350,
+    "exportBytes": 2212382,
+    "jpegQuality": 90,
+    "cdpExceptions": []
+  },
+  {
+    "name": "04-square.jpg",
+    "width": 960,
+    "height": 960,
+    "bytes": 156782,
+    "exportWidth": 1080,
+    "exportHeight": 1080,
+    "exportBytes": 1803430,
+    "jpegQuality": 90,
+    "cdpExceptions": []
+  }
+]

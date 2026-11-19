@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171326">
+  <title>Neon District — Cover Studio</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23ff4f9a'/%3E%3Cpath d='M7 25V7h5l8 10V7h5v18h-5L12 15v10z' fill='%23171326'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="studio-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <div><strong>NEON DISTRICT</strong><span>COVER STUDIO</span></div>
+      </div>
+      <div class="topbar-note"><span class="live-dot"></span> YOUR PHOTOS. YOUR STORY.</div>
+      <div class="local-badge">100% LOCAL</div>
+    </header>
+
+    <div class="workspace">
+      <aside class="control-rail" aria-label="Cover controls">
+        <section class="control-section photo-section">
+          <div class="section-heading"><span>01</span><h2>YOUR SCENES</h2></div>
+          <label class="drop-zone" id="dropZone" for="photoInput">
+            <span class="upload-icon" aria-hidden="true">+</span>
+            <strong>DROP PHOTOS HERE</strong>
+            <span>or choose from your device</span>
+            <input id="photoInput" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+          </label>
+          <div class="sample-heading">TRY AN ORIGINAL SAMPLE</div>
+          <div class="sample-buttons">
+            <button type="button" data-sample="midnight-boulevard">Boulevard</button>
+            <button type="button" data-sample="sunset-pier">Pier</button>
+            <button type="button" data-sample="ocean-drive">Ocean Drive</button>
+          </div>
+        </section>
+
+        <section class="control-section">
+          <div class="section-heading"><span>02</span><h2>MAKE HEADLINES</h2></div>
+          <div class="title-fields">
+            <label>TITLE LINE ONE<input id="titleTop" type="text" value="NEON" maxlength="18" autocomplete="off"></label>
+            <label>TITLE LINE TWO<input id="titleBottom" type="text" value="EMPIRE" maxlength="18" autocomplete="off"></label>
+            <label>TAGLINE<input id="tagline" type="text" value="OWN THE NIGHT" maxlength="42" autocomplete="off"></label>
+          </div>
+        </section>
+
+        <section class="control-section">
+          <div class="section-heading"><span>03</span><h2>POST FORMAT</h2></div>
+          <div class="format-switch" role="group" aria-label="Export dimensions">
+            <button type="button" data-size="square"><b>1:1</b><span>1080²</span></button>
+            <button type="button" data-size="portrait"><b>4:5</b><span>1080 × 1350</span></button>
+            <button type="button" data-size="landscape" class="selected"><b>16:9</b><span>1920 × 1080</span></button>
+          </div>
+        </section>
+
+        <section class="control-section panels-section">
+          <div class="section-heading"><span>04</span><h2>FRAME THE CHAOS</h2></div>
+          <p class="control-hint">Select a panel, then drag your photo to pan. Scroll to zoom.</p>
+          <div id="panelControls" class="panel-controls"></div>
+          <label class="zoom-label" for="zoomControl"><span>ZOOM</span><output id="zoomValue">100%</output></label>
+          <input id="zoomControl" type="range" min="1" max="3.5" step="0.01" value="1">
+          <button id="resetFrame" class="text-button" type="button">RESET SELECTED FRAME</button>
+        </section>
+      </aside>
+
+      <section class="preview-area" aria-label="Live cover preview">
+        <div class="preview-meta">
+          <div><span class="eyebrow">LIVE CANVAS</span><strong id="formatName">WIDESCREEN / 1920 × 1080</strong></div>
+          <span class="preview-tip">DRAG TO REFRAME · SCROLL TO ZOOM</span>
+        </div>
+        <div class="canvas-stage" id="canvasStage">
+          <canvas id="coverCanvas" width="1920" height="1080" aria-label="Interactive cover art. Drag a panel to reposition its photo."></canvas>
+        </div>
+        <div class="export-bar">
+          <div class="export-note"><strong>READY FOR THE FEED</strong><span>PNG · sRGB · No upload, ever</span></div>
+          <button id="exportButton" class="export-button" type="button"><span>EXPORT PNG</span><b aria-hidden="true">↗</b></button>
+        </div>
+        <p id="statusMessage" class="status-message" role="status">Original samples loaded. Make them yours.</p>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="./src/studio.js"></script>
+</body>
+</html>
